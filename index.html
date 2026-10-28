@@ -79,8 +79,10 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 
 /* Numbers as statements */
 .facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(28px,5vw,48px) 0}
-.facts p{font-family:var(--display);font-weight:600;font-size:clamp(1.35rem,3vw,2.1rem);line-height:1.25;letter-spacing:-.015em;margin:0;max-width:34ch}
-.facts p strong{font-weight:800}
+.stats{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(20px,3vw,40px)}
+.stats strong,.case .stat strong{display:block;font-family:var(--display);font-weight:800;line-height:1;letter-spacing:-.035em;color:var(--accent)}
+.stats strong{font-size:clamp(2.6rem,6vw,4.2rem);margin-bottom:.15em}
+.stats span{display:block;color:var(--muted);font-size:.95rem;line-height:1.4;max-width:18ch}
 .facts small{display:block;margin-top:1em;color:var(--muted);font-family:var(--body);font-size:.85rem}
 
 /* Sections */
@@ -93,6 +95,9 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem)
 .case .frame{position:relative;height:auto;width:100%;transform:none;animation:none}
 .case h3{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;line-height:1.1;margin:0 0 .25em}
 .case .kind{color:var(--accent);font-weight:700;font-size:.95rem;margin:0 0 .9em}
+.case .stat{margin:0 0 .8em}
+.case .stat strong{font-size:clamp(2.2rem,4.5vw,3rem)}
+.case .stat span{color:var(--muted);font-size:.95rem}
 .case .result{font-size:1.1rem;margin:0 0 1em;max-width:60ch}
 .case details{max-width:64ch}
 .case summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:inline-block;border-bottom:1.5px solid var(--accent);padding-bottom:2px}
@@ -108,10 +113,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem)
 .brands em{font-style:normal;color:var(--accent)}
 
 /* About */
-.about{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,5vw,64px)}
-.about p{margin:0 0 1em;max-width:58ch}
-.about h3{font-size:1rem;margin:0 0 .4em}
-.about ul{margin:0 0 1.6em;padding-left:1.1em;color:var(--muted)}
+.about p{margin:0 0 1em;max-width:58ch;font-size:1.15rem}
 
 /* Contact */
 .contact{padding-bottom:clamp(56px,9vw,112px)}
@@ -128,12 +130,11 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   .stack .frame{height:72%}
   .stack .frame:nth-child(1){top:22%}
   .stack .frame:nth-child(3){top:26%}
+  .stats{grid-template-columns:repeat(2,1fr)}
   .case{grid-template-columns:1fr}
   .case .frame{max-width:200px}
   .case dl{grid-template-columns:1fr;gap:.2em}
-  .case dd{margin-bottom:.7em}
-  .about{grid-template-columns:1fr}
-}
+  .case dd{margin-bottom:.7em}}
 </style>
 </head>
 <body>
@@ -158,7 +159,12 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   </header>
 
   <div class="facts">
-    <p><strong>34 milhões</strong> de visualizações orgânicas em 12 meses, <strong>mais de 100 mil</strong> por vídeo na mediana e <strong><i class="todo">[9 ou 10?]</i> marcas</strong> atendidas.</p>
+    <ul class="stats">
+      <li><strong>34 mi</strong><span>visualizações orgânicas em 12 meses</span></li>
+      <li><strong>2 mi</strong><span>no maior vídeo orgânico</span></li>
+      <li><strong>+50%</strong><span>dos vídeos passam de 100 mil visualizações</span></li>
+      <li><strong>10</strong><span>marcas atendidas</span></li>
+    </ul>
     <small>Dados do TikTok Studio, 365 dias até outubro de 2026. Números orgânicos excluem campanhas impulsionadas.</small>
   </div>
 
@@ -171,6 +177,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       <div>
         <h3>Pink de Luxo</h3>
         <p class="kind">Parceria recorrente, negociada direto com a marca</p>
+        <p class="stat"><strong><i class="todo">[número]</i></strong><span><i class="todo">[renovações, vendas ou cupons]</i></span></p>
         <p class="result"><i class="todo">[nº de vídeos]</i> vídeos em <i class="todo">[duração da parceria]</i>, com <i class="todo">[renovações]</i>. Do contrato à entrega, sem intermediação de agência.</p>
         <details>
           <summary>Ler o case completo</summary>
@@ -191,7 +198,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       <div>
         <h3>Dola</h3>
         <p class="kind">Tutorial de edição com IA</p>
-        <p class="result">O conteúdo foi escolhido pela marca para impulsionamento com mídia paga e somou 54 milhões de visualizações em dois vídeos.</p>
+        <p class="stat"><strong>54 mi</strong><span>visualizações em dois vídeos, com mídia paga da marca</span></p>
+        <p class="result">A Dola escolheu o meu conteúdo para virar anúncio e investiu mídia paga para impulsioná-lo.</p>
         <details>
           <summary>Ler o case completo</summary>
           <dl>
@@ -211,7 +219,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       <div>
         <h3>AliExpress</h3>
         <p class="kind">Achadinhos com cara de recomendação</p>
-        <p class="result">O conteúdo foi escolhido pela marca para impulsionamento com mídia paga e somou 3 milhões de visualizações.</p>
+        <p class="stat"><strong>3 mi</strong><span>visualizações, com mídia paga da marca</span></p>
+        <p class="result">O AliExpress escolheu o meu conteúdo para virar anúncio e investiu mídia paga para impulsioná-lo.</p>
         <details>
           <summary>Ler o case completo</summary>
           <dl>
@@ -231,6 +240,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       <div>
         <h3><span class="todo">[SHEIN, Oguru ou Naturaltech]</span></h3>
         <p class="kind">Campanha 100% orgânica</p>
+        <p class="stat"><strong><i class="todo">[número]</i></strong><span>visualizações orgânicas, sem mídia paga</span></p>
         <p class="result"><i class="todo">[Resultado da campanha sem mídia paga]</i></p>
         <details>
           <summary>Ler o case completo</summary>
@@ -255,16 +265,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <section id="sobre">
     <h2>Sobre</h2>
     <div class="about">
-      <div>
-        <p>Estudo Publicidade e Propaganda no Mackenzie, com conclusão prevista em 2027. Aprendi marketing na prática: desde 2024 planejo, produzo e analiso campanhas para marcas, agenciada pela ALOHA e também atendendo clientes diretos.</p>
-        <p>Procuro estágio em marketing de influência, social media ou branded content, para levar essa experiência para dentro de um time.</p>
-      </div>
-      <div>
-        <h3>O que eu faço</h3>
-        <ul><li>Planejamento de campanhas</li><li>Roteiro e produção de conteúdo</li><li>Posicionamento de marca</li><li>Análise de métricas</li><li>Gestão de prazos com agência e anunciantes</li></ul>
-        <h3>Ferramentas</h3>
-        <ul><li>TikTok Studio, Canva, Adobe, PowerPoint e Excel</li><li>Português nativo, inglês avançado</li></ul>
-      </div>
+      <p>Estudo Publicidade e Propaganda no Mackenzie, com conclusão prevista em 2027. Desde 2024 planejo, produzo e analiso campanhas, trabalhando tanto com agência (ALOHA) quanto direto com marcas, como a Pink de Luxo.</p>
+      <p>Procuro estágio em marketing de influência, social media ou branded content, para levar essa experiência para dentro de um time.</p>
     </div>
   </section>
 
