@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sophia Scaramella — Marketing de influência</title>
+<meta name="description" content="Portfólio de Sophia Scaramella: cases de marketing de influência, do briefing ao resultado.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Lato:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#FFFFFF; --ink:#1E1A1D; --muted:#6E6468; --accent:#B5543C;
+  --blush:#F4E3DC; --blush-2:#E9CFC4; --line:#EAE3E0; --todo-bg:#FFF4D6; --todo-ink:#7A5B00;
+  --display:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --body:"Lato", "Helvetica Neue", Arial, sans-serif;
+  color-scheme: light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#1A1618; --ink:#F3ECEE; --muted:#B7AAAF; --accent:#E08A72;
+    --blush:#2C2225; --blush-2:#3A2C30; --line:#33292C; --todo-bg:#3A3015; --todo-ink:#F1D58A;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#1A1618; --ink:#F3ECEE; --muted:#B7AAAF; --accent:#E08A72;
+  --blush:#2C2225; --blush-2:#3A2C30; --line:#33292C; --todo-bg:#3A3015; --todo-ink:#F1D58A;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth; scroll-padding-top:env(safe-area-inset-top,0px)}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto} *{animation:none!important;transition:none!important}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:var(--accent)}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 clamp(20px,5vw,48px)}
+.todo{background:var(--todo-bg);color:var(--todo-ink);padding:.05em .35em;border-radius:3px;font-style:normal}
+
+/* Hero */
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(24px,5vw,64px);align-items:center;min-height:min(88vh,760px);padding:clamp(40px,8vw,96px) 0 clamp(32px,6vw,72px)}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(3rem,8.5vw,6.4rem);line-height:.92;letter-spacing:-.035em;margin:0 0 .35em}
+.hero .lede{font-size:clamp(1.15rem,2vw,1.4rem);line-height:1.45;max-width:30ch;margin:0 0 1.6em;color:var(--ink)}
+.hero .lede span{color:var(--muted);display:block;font-size:.8em;margin-top:.5em}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-block;font-weight:700;font-size:.95rem;text-decoration:none;padding:.8em 1.3em;border-radius:999px;border:1.5px solid var(--ink);color:var(--ink)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn:hover{border-color:var(--accent)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent)}
+
+/* Vertical frames — the memorable element */
+.stack{position:relative;height:clamp(360px,48vw,560px)}
+.frame{position:absolute;aspect-ratio:9/16;height:82%;border-radius:22px;background:linear-gradient(170deg,var(--blush) 0%,var(--blush-2) 100%);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:16px}
+.frame b{font-family:var(--display);font-size:1.35rem;font-weight:800;letter-spacing:-.02em;line-height:1.05}
+.frame small{color:var(--muted);font-size:.8rem}
+.frame::after{content:"";position:absolute;left:16px;right:16px;bottom:10px;height:3px;border-radius:2px;background:linear-gradient(90deg,var(--accent) var(--p,60%),var(--line) 0)}
+.frame:nth-child(1){left:0;top:12%;transform:rotate(-6deg);--p:35%}
+.frame:nth-child(2){left:28%;top:0;z-index:2;--p:72%;box-shadow:0 18px 40px -18px rgba(30,26,29,.35)}
+.frame:nth-child(3){right:0;top:16%;transform:rotate(5deg);--p:50%}
+@media (prefers-reduced-motion: no-preference){
+  .frame{animation:rise .9s cubic-bezier(.2,.7,.2,1) both}
+  .frame:nth-child(2){animation-delay:.12s}.frame:nth-child(3){animation-delay:.24s}
+  @keyframes rise{from{opacity:0;translate:0 24px}to{opacity:1;translate:0 0}}
+}
+
+/* Numbers as statements */
+.facts{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:clamp(28px,5vw,48px) 0}
+.facts p{font-family:var(--display);font-weight:600;font-size:clamp(1.35rem,3vw,2.1rem);line-height:1.25;letter-spacing:-.015em;margin:0;max-width:34ch}
+.facts p strong{font-weight:800}
+.facts small{display:block;margin-top:1em;color:var(--muted);font-family:var(--body);font-size:.85rem}
+
+/* Sections */
+section{padding:clamp(56px,9vw,112px) 0 0}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem);letter-spacing:-.03em;line-height:1;margin:0 0 .4em}
+.intro{color:var(--muted);max-width:56ch;margin:0 0 2.5em}
+
+/* Cases */
+.case{display:grid;grid-template-columns:minmax(140px,220px) 1fr;gap:clamp(20px,4vw,48px);padding:clamp(28px,4vw,40px) 0;border-top:1px solid var(--line)}
+.case .frame{position:relative;height:auto;width:100%;transform:none;animation:none}
+.case h3{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;line-height:1.1;margin:0 0 .25em}
+.case .kind{color:var(--accent);font-weight:700;font-size:.95rem;margin:0 0 .9em}
+.case .result{font-size:1.1rem;margin:0 0 1em;max-width:60ch}
+.case details{max-width:64ch}
+.case summary{cursor:pointer;font-weight:700;color:var(--ink);list-style:none;display:inline-block;border-bottom:1.5px solid var(--accent);padding-bottom:2px}
+.case summary::-webkit-details-marker{display:none}
+.case details[open] summary{margin-bottom:1em}
+.case dl{margin:0;display:grid;grid-template-columns:8.5em 1fr;gap:.7em 1.2em}
+.case dt{font-weight:700}
+.case dd{margin:0;color:var(--muted)}
+.case .watch{display:inline-block;margin-top:1.2em;font-weight:700}
+
+/* Brands */
+.brands{font-family:var(--display);font-weight:600;font-size:clamp(1.2rem,2.6vw,1.75rem);line-height:1.5;letter-spacing:-.01em;max-width:40ch;margin:0}
+.brands em{font-style:normal;color:var(--accent)}
+
+/* About */
+.about{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(24px,5vw,64px)}
+.about p{margin:0 0 1em;max-width:58ch}
+.about h3{font-size:1rem;margin:0 0 .4em}
+.about ul{margin:0 0 1.6em;padding-left:1.1em;color:var(--muted)}
+
+/* Contact */
+.contact{padding-bottom:clamp(56px,9vw,112px)}
+.contact h2{font-size:clamp(2.4rem,6vw,4.4rem)}
+.contact ul{list-style:none;padding:0;margin:1.5em 0 2em;display:grid;gap:.4em}
+.contact li a{font-family:var(--display);font-weight:600;font-size:clamp(1.15rem,2.4vw,1.5rem);text-decoration:none;color:var(--ink);border-bottom:1.5px solid var(--line)}
+.contact li a:hover{border-color:var(--accent)}
+.contact li span{color:var(--muted);font-size:.9rem;margin-right:.6em;display:inline-block;min-width:5.5em}
+footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-size:.85rem}
+
+@media (max-width:820px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .stack{height:min(110vw,440px);max-width:420px}
+  .case{grid-template-columns:1fr}
+  .case .frame{max-width:200px}
+  .case dl{grid-template-columns:1fr;gap:.2em}
+  .case dd{margin-bottom:.7em}
+  .about{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <div>
+      <h1>Sophia Scaramella</h1>
+      <p class="lede">Marketing de influência, do briefing ao resultado.
+        <span>Estudante de Publicidade no Mackenzie, criando campanhas para marcas desde 2024.</span></p>
+      <div class="actions">
+        <a class="btn primary" href="#cases">Ver cases</a>
+        <a class="btn" href="#contato">Falar comigo</a>
+      </div>
+    </div>
+    <div class="stack" aria-hidden="true">
+      <div class="frame"><b>AliExpress</b><small>achadinhos</small></div>
+      <div class="frame"><b>Pink de Luxo</b><small>parceria recorrente</small></div>
+      <div class="frame"><b>Dola</b><small>tutorial com IA</small></div>
+    </div>
+  </header>
+
+  <div class="facts">
+    <p><strong>34 milhões</strong> de visualizações orgânicas em 12 meses, <strong>mais de 100 mil</strong> por vídeo na mediana e <strong>9 marcas</strong> atendidas.</p>
+    <small>Dados do TikTok Studio, últimos 365 dias. Números orgânicos excluem campanhas impulsionadas.</small>
+  </div>
+
+  <section id="cases">
+    <h2>Cases</h2>
+    <p class="intro">Quatro campanhas, contadas pelo que importa para uma marca: o que foi pedido, como eu resolvi e o que deu certo.</p>
+
+    <article class="case">
+      <div class="frame"><b>Pink de Luxo</b><small>cliente direto</small></div>
+      <div>
+        <h3>Pink de Luxo</h3>
+        <p class="kind">Parceria recorrente, negociada direto com a marca</p>
+        <p class="result"><i class="todo">[nº de vídeos]</i> vídeos em <i class="todo">[duração da parceria]</i>, com <i class="todo">[renovações]</i>. Do contrato à entrega, sem intermediação de agência.</p>
+        <details>
+          <summary>Ler o case completo</summary>
+          <dl>
+            <dt>Contexto</dt><dd><i class="todo">[O que a marca buscava quando procurou a Sophia]</i></dd>
+            <dt>Estratégia</dt><dd><i class="todo">[Formato escolhido e por que ele funciona para esse público]</i></dd>
+            <dt>Execução</dt><dd><i class="todo">[Rotina de produção, aprovação e cronograma com a marca]</i></dd>
+            <dt>Resultado</dt><dd><i class="todo">[Renovações e retorno passado pela marca: vendas, cupom]</i></dd>
+            <dt>Aprendizado</dt><dd><i class="todo">[Como o formato evoluiu ao longo da parceria]</i></dd>
+          </dl>
+          <a class="watch" href="https://www.tiktok.com/@sosozinha2.0" target="_blank" rel="noopener">Assistir no TikTok</a>
+        </details>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="frame" style="--p:85%"><b>Dola</b><small>app de IA</small></div>
+      <div>
+        <h3>Dola</h3>
+        <p class="kind">Tutorial de edição com IA</p>
+        <p class="result">O conteúdo foi escolhido pela marca para impulsionamento com mídia paga e somou 54 milhões de visualizações em dois vídeos.</p>
+        <details>
+          <summary>Ler o case completo</summary>
+          <dl>
+            <dt>Contexto</dt><dd><i class="todo">[O briefing da Dola]</i></dd>
+            <dt>Estratégia</dt><dd>Mostrar o app resolvendo problemas reais, com os prompts usados na tela, para que quem assiste consiga repetir. <i class="todo">[completar]</i></dd>
+            <dt>Execução</dt><dd><i class="todo">[Roteiro, gravação e aprovação]</i></dd>
+            <dt>Resultado</dt><dd>54 milhões de visualizações com a mídia paga da marca, e 10 mil novos seguidores no vídeo principal.</dd>
+            <dt>Aprendizado</dt><dd><i class="todo">[O que ela faria diferente]</i></dd>
+          </dl>
+          <a class="watch" href="https://www.tiktok.com/@sosozinha2.0" target="_blank" rel="noopener">Assistir no TikTok</a>
+        </details>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="frame" style="--p:55%"><b>AliExpress</b><small>achadinhos</small></div>
+      <div>
+        <h3>AliExpress</h3>
+        <p class="kind">Achadinhos com cara de recomendação</p>
+        <p class="result">Conteúdo impulsionado pela marca, com 3 milhões de visualizações.</p>
+        <details>
+          <summary>Ler o case completo</summary>
+          <dl>
+            <dt>Contexto</dt><dd><i class="todo">[O briefing do AliExpress]</i></dd>
+            <dt>Estratégia</dt><dd><i class="todo">[Por que o formato de achadinhos]</i></dd>
+            <dt>Execução</dt><dd><i class="todo">[Seleção de produtos, roteiro, gravação]</i></dd>
+            <dt>Resultado</dt><dd>3 milhões de visualizações com a mídia paga da marca.</dd>
+            <dt>Aprendizado</dt><dd><i class="todo">[O que ela faria diferente]</i></dd>
+          </dl>
+          <a class="watch" href="https://www.tiktok.com/@sosozinha2.0" target="_blank" rel="noopener">Assistir no TikTok</a>
+        </details>
+      </div>
+    </article>
+
+    <article class="case">
+      <div class="frame" style="--p:40%"><b><span class="todo">[Marca]</span></b><small>campanha orgânica</small></div>
+      <div>
+        <h3><span class="todo">[SHEIN, Oguru ou Naturaltech]</span></h3>
+        <p class="kind">Campanha 100% orgânica</p>
+        <p class="result"><i class="todo">[Resultado da campanha sem mídia paga]</i></p>
+        <details>
+          <summary>Ler o case completo</summary>
+          <dl>
+            <dt>Contexto</dt><dd><i class="todo">[a preencher]</i></dd>
+            <dt>Estratégia</dt><dd><i class="todo">[a preencher]</i></dd>
+            <dt>Execução</dt><dd><i class="todo">[a preencher]</i></dd>
+            <dt>Resultado</dt><dd><i class="todo">[a preencher]</i></dd>
+            <dt>Aprendizado</dt><dd><i class="todo">[a preencher]</i></dd>
+          </dl>
+          <a class="watch" href="https://www.tiktok.com/@sosozinha2.0" target="_blank" rel="noopener">Assistir no TikTok</a>
+        </details>
+      </div>
+    </article>
+  </section>
+
+  <section id="marcas">
+    <h2>Marcas atendidas</h2>
+    <p class="brands"><em>Pink de Luxo</em>, Realme, SHEIN, AliExpress, Dola, L’Occitane, Red Bull, Melu, Dux Nutrition e OAS.</p>
+  </section>
+
+  <section id="sobre">
+    <h2>Sobre</h2>
+    <div class="about">
+      <div>
+        <p>Estudo Publicidade e Propaganda no Mackenzie, com conclusão prevista em 2027. Aprendi marketing na prática: há dois anos planejo, produzo e analiso campanhas para marcas, agenciada pela ALOHA e também atendendo clientes diretos.</p>
+        <p>Procuro estágio em marketing de influência, social media ou branded content, para levar essa experiência para dentro de um time.</p>
+      </div>
+      <div>
+        <h3>O que eu faço</h3>
+        <ul><li>Planejamento de campanhas</li><li>Roteiro e produção de conteúdo</li><li>Posicionamento de marca</li><li>Análise de métricas</li><li>Gestão de prazos com agência e anunciantes</li></ul>
+        <h3>Ferramentas</h3>
+        <ul><li>TikTok Studio, Canva, Adobe, PowerPoint e Excel</li><li>Português nativo, inglês avançado</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato" class="contact">
+    <h2>Vamos conversar?</h2>
+    <ul>
+      <li><span>E-mail</span><a href="mailto:sophiascaramella@gmail.com">sophiascaramella@gmail.com</a></li>
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/sophia-scaramella-a5907a380" target="_blank" rel="noopener">sophia-scaramella</a></li>
+      <li><span>Instagram</span><a href="https://www.instagram.com/sophiascaramella" target="_blank" rel="noopener">@sophiascaramella</a></li>
+      <li><span>TikTok</span><a href="https://www.tiktok.com/@sosozinha2.0" target="_blank" rel="noopener">@sosozinha2.0</a></li>
+    </ul>
+    <a class="btn primary" href="cv-sophia-scaramella.pdf">Baixar currículo</a>
+  </section>
+</main>
+<footer><div class="wrap">Sophia Scaramella, São Paulo</div></footer>
+</body>
+</html>
