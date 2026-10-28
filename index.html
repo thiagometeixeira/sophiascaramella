@@ -113,7 +113,10 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem)
 .brands em{font-style:normal;color:var(--accent)}
 
 /* About */
+.about{display:grid;grid-template-columns:minmax(200px,300px) 1fr;gap:clamp(24px,5vw,64px);align-items:center}
 .about p{margin:0 0 1em;max-width:58ch;font-size:1.15rem}
+.portrait{aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:linear-gradient(170deg,var(--blush) 0%,var(--blush-2) 100%);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:16px;text-align:center}
+.portrait img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* Contact */
 .contact{padding-bottom:clamp(56px,9vw,112px)}
@@ -131,6 +134,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   .stack .frame:nth-child(1){top:22%}
   .stack .frame:nth-child(3){top:26%}
   .stats{grid-template-columns:repeat(2,1fr)}
+  .about{grid-template-columns:1fr}
+  .portrait{max-width:260px}
   .case{grid-template-columns:1fr}
   .case .frame{max-width:200px}
   .case dl{grid-template-columns:1fr;gap:.2em}
@@ -145,7 +150,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       <h1>Sophia Scaramella</h1>
       <p class="lede">Marketing de influência, do briefing ao resultado.
         <span>Estudante de Publicidade no Mackenzie, criando campanhas para marcas desde 2024.</span></p>
-      <p class="seeking">Buscando estágio em marketing de influência, social media ou branded content · disponível a partir de <i class="todo">[mês/ano]</i></p>
+      <p class="seeking">Disponível para estágio em marketing de influência, social media ou branded content.</p>
       <div class="actions">
         <a class="btn primary" href="#cases">Ver cases</a>
         <a class="btn" href="#contato">Falar comigo</a>
@@ -170,7 +175,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 
   <section id="cases">
     <h2>Cases</h2>
-    <p class="intro">Quatro campanhas, contadas pelo que importa para uma marca: o que foi pedido, como eu resolvi e o que deu certo.</p>
+    <p class="intro">Por trás de cada vídeo tem um briefing, um prazo e uma marca esperando resultado. Aqui estão quatro deles.</p>
 
     <article class="case">
       <div class="frame"><b>Pink de Luxo</b><small>cliente direto</small></div>
@@ -265,8 +270,11 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <section id="sobre">
     <h2>Sobre</h2>
     <div class="about">
+      <div class="portrait"><i class="todo">[foto da Sophia: img/sophia.jpg]</i></div>
+      <div>
       <p>Estudo Publicidade e Propaganda no Mackenzie, com conclusão prevista em 2027. Desde 2024 planejo, produzo e analiso campanhas, trabalhando tanto com agência (ALOHA) quanto direto com marcas, como a Pink de Luxo.</p>
       <p>Procuro estágio em marketing de influência, social media ou branded content, para levar essa experiência para dentro de um time.</p>
+      </div>
     </div>
   </section>
 
