@@ -71,6 +71,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .frame:nth-child(1){left:0;top:12%;transform:rotate(-6deg);--p:35%}
 .frame:nth-child(2){left:28%;top:0;z-index:2;--p:72%;box-shadow:0 18px 40px -18px rgba(30,26,29,.35)}
 .frame:nth-child(3){right:0;top:16%;transform:rotate(5deg);--p:50%}
+.case{scroll-margin-top:24px}
+.stack a.frame{color:inherit;text-decoration:none}
 .stack .frame{cursor:pointer;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
 .stack .frame:hover,.stack .frame.front{z-index:3;transform:rotate(0) scale(1.05);box-shadow:0 24px 50px -18px rgba(30,26,29,.5)}
 .frame.cover{background:var(--ink)}
@@ -169,10 +171,10 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
         <a class="btn" href="#contato">Falar comigo</a>
       </div>
     </div>
-    <div class="stack" aria-hidden="true">
-      <div class="frame cover"><img src="img/aliexpress.jpg" alt=""><b>AliExpress</b><small>achadinhos</small></div>
-      <div class="frame cover"><img src="img/pink.jpg" alt=""><b>Pink de Luxo</b><small>parceria recorrente</small></div>
-      <div class="frame cover"><img src="img/dola.jpg" alt=""><b>Dola</b><small>tutorial com IA</small></div>
+    <div class="stack">
+      <a class="frame cover" href="#case-aliexpress"><img src="img/aliexpress.jpg" alt=""><b>AliExpress</b><small>achadinhos</small></a>
+      <a class="frame cover" href="#case-pink"><img src="img/pink.jpg" alt=""><b>Pink de Luxo</b><small>parceria recorrente</small></a>
+      <a class="frame cover" href="#case-dola"><img src="img/dola.jpg" alt=""><b>Dola</b><small>tutorial com IA</small></a>
     </div>
   </header>
 
@@ -190,7 +192,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
     <h2>Cases</h2>
     <p class="intro">Por trás de cada vídeo tem um briefing, um prazo e uma marca esperando resultado. Aqui estão quatro deles.</p>
 
-    <article class="case">
+    <article class="case" id="case-pink">
       <div class="frame media"><img src="img/pink.jpg" alt="Sophia com vestido da Pink de Luxo em foto de estúdio para o site da marca" loading="lazy"></div>
       <div>
         <h3>Pink de Luxo</h3>
@@ -211,7 +213,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       </div>
     </article>
 
-    <article class="case">
+    <article class="case" id="case-dola">
       <div class="frame media">
         <video src="img/dola.mp4" poster="img/dola.jpg" preload="none" playsinline aria-label="Vídeo da campanha Dola"></video>
         <button class="play" type="button" aria-label="Assistir ao vídeo">▶</button>
@@ -235,7 +237,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       </div>
     </article>
 
-    <article class="case">
+    <article class="case" id="case-aliexpress">
       <div class="frame media">
         <video src="img/aliexpress.mp4" poster="img/aliexpress.jpg" preload="none" playsinline aria-label="Vídeo da campanha AliExpress"></video>
         <button class="play" type="button" aria-label="Assistir ao vídeo">▶</button>
@@ -259,7 +261,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       </div>
     </article>
 
-    <article class="case">
+    <article class="case" id="case-oguru">
       <div class="frame media">
         <video src="img/oguru.mp4" poster="img/oguru.jpg" preload="none" playsinline aria-label="Vídeo da campanha GO by Oguru"></video>
         <button class="play" type="button" aria-label="Assistir ao vídeo">▶</button>
@@ -314,7 +316,10 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 <footer><div class="wrap">Sophia Scaramella, São Paulo</div></footer>
 <script>
 const cards=document.querySelectorAll('.stack .frame');
-cards.forEach(c=>c.addEventListener('click',()=>{const on=!c.classList.contains('front');cards.forEach(o=>o.classList.remove('front'));c.classList.toggle('front',on)}));
+const hover=matchMedia('(hover:hover)').matches;
+cards.forEach(c=>c.addEventListener('click',e=>{
+  if(!hover&&!c.classList.contains('front')){e.preventDefault();cards.forEach(o=>o.classList.remove('front'));c.classList.add('front');return}
+  const d=document.querySelector(c.hash+' details');if(d)d.open=true}));
 document.querySelectorAll('.frame .play').forEach(b=>b.addEventListener('click',()=>{const v=b.previousElementSibling;v.controls=true;v.play();b.remove()}));
 </script>
 </body>
