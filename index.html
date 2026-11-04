@@ -126,6 +126,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem)
 .about{display:grid;grid-template-columns:minmax(200px,300px) 1fr;gap:clamp(24px,5vw,64px);align-items:center}
 .about p{margin:0 0 1em;max-width:58ch;font-size:1.15rem}
 .portrait{aspect-ratio:4/5;border-radius:22px;overflow:hidden;background:linear-gradient(170deg,var(--blush) 0%,var(--blush-2) 100%);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;padding:16px;text-align:center}
+.portrait:has(img){padding:0}
 .portrait img{width:100%;height:100%;object-fit:cover;display:block}
 
 /* Contact */
@@ -289,7 +290,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   <section id="sobre">
     <h2>Sobre</h2>
     <div class="about">
-      <div class="portrait"><i class="todo">[foto da Sophia: img/sophia.jpg]</i></div>
+      <div class="portrait"><img src="img/sophia.jpg" alt="Sophia Scaramella" loading="lazy"></div>
       <div>
       <p>Estudo Publicidade e Propaganda no Mackenzie, com conclusão prevista em 2027. Desde 2024 planejo, produzo e analiso campanhas, trabalhando tanto com agência (ALOHA) quanto direto com marcas, como a Pink de Luxo.</p>
       <p>Procuro estágio em marketing de influência, social media ou branded content, para levar essa experiência para dentro de um time.</p>
