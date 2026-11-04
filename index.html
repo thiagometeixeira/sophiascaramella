@@ -92,7 +92,7 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem)
 
 /* Cases */
 .case{display:grid;grid-template-columns:minmax(140px,220px) 1fr;gap:clamp(20px,4vw,48px);padding:clamp(28px,4vw,40px) 0;border-top:1px solid var(--line)}
-.case .frame{position:relative;height:auto;width:100%;transform:none;animation:none}
+.case .frame{position:relative;top:auto;height:auto;width:100%;transform:none;animation:none}
 .case h3{font-family:var(--display);font-weight:800;font-size:clamp(1.5rem,3vw,2rem);letter-spacing:-.02em;line-height:1.1;margin:0 0 .25em}
 .case .kind{color:var(--accent);font-weight:700;font-size:.95rem;margin:0 0 .9em}
 .case .stat{margin:0 0 .8em}
@@ -107,6 +107,11 @@ h2{font-family:var(--display);font-weight:800;font-size:clamp(2rem,4.5vw,3.2rem)
 .case dt{font-weight:700}
 .case dd{margin:0;color:var(--muted)}
 .case .watch{display:inline-block;margin-top:1.2em;font-weight:700}
+.frame.media{padding:0;background:var(--ink)}
+.frame.media::after{display:none}
+.frame.media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.frame .play{position:absolute;left:50%;top:50%;translate:-50% -50%;width:56px;height:56px;border-radius:50%;border:0;background:rgba(255,255,255,.9);color:var(--accent);font-size:1.3rem;padding-left:4px;cursor:pointer;box-shadow:0 8px 24px -8px rgba(0,0,0,.4)}
+.frame .play:hover{background:#fff}
 
 /* Brands */
 .brands{font-family:var(--display);font-weight:600;font-size:clamp(1.2rem,2.6vw,1.75rem);line-height:1.5;letter-spacing:-.01em;max-width:40ch;margin:0}
@@ -168,7 +173,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       <li><strong>34 mi</strong><span>visualizações orgânicas em 12 meses</span></li>
       <li><strong>2 mi</strong><span>no maior vídeo orgânico</span></li>
       <li><strong>+50%</strong><span>dos vídeos passam de 100 mil visualizações</span></li>
-      <li><strong>10</strong><span>marcas atendidas</span></li>
+      <li><strong>11</strong><span>marcas atendidas</span></li>
     </ul>
     <small>Dados do TikTok Studio, 365 dias até outubro de 2026. Números orgânicos excluem campanhas impulsionadas.</small>
   </div>
@@ -182,8 +187,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
       <div>
         <h3>Pink de Luxo</h3>
         <p class="kind">Parceria recorrente, negociada direto com a marca</p>
-        <p class="stat"><strong><i class="todo">[número]</i></strong><span><i class="todo">[renovações, vendas ou cupons]</i></span></p>
-        <p class="result"><i class="todo">[nº de vídeos]</i> vídeos em <i class="todo">[duração da parceria]</i>, com <i class="todo">[renovações]</i>. Do contrato à entrega, sem intermediação de agência.</p>
+        <p class="stat"><strong>+1.800</strong><span>usos do meu cupom</span></p>
+        <p class="result">Vídeos UGC, fotos de estúdio para o site e vídeos em collab, em renovação mensal desde 2024. Do contrato à entrega, sem intermediação de agência.</p>
         <details>
           <summary>Ler o case completo</summary>
           <dl>
@@ -199,7 +204,10 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
     </article>
 
     <article class="case">
-      <div class="frame" style="--p:85%"><b>Dola</b><small>app de IA</small></div>
+      <div class="frame media">
+        <video src="img/dola.mp4" poster="img/dola.jpg" preload="none" playsinline aria-label="Vídeo da campanha Dola"></video>
+        <button class="play" type="button" aria-label="Assistir ao vídeo">▶</button>
+      </div>
       <div>
         <h3>Dola</h3>
         <p class="kind">Tutorial de edição com IA</p>
@@ -208,7 +216,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
         <details>
           <summary>Ler o case completo</summary>
           <dl>
-            <dt>Contexto</dt><dd><i class="todo">[O briefing da Dola]</i></dd>
+            <dt>Contexto</dt><dd>A Dola queria lançar o gerador de imagens com IA no Carnaval, com o app entrando de forma natural no meu estilo de conteúdo. O briefing pedia que eu aparecesse nos três primeiros segundos, que o nome do app ficasse claro, que o vídeo levasse ao download pelos comentários e que o prompt usado fosse publicado ali.</dd>
             <dt>Estratégia</dt><dd>Mostrar o app resolvendo problemas reais, com os prompts usados na tela, para que quem assiste consiga repetir. <i class="todo">[completar]</i></dd>
             <dt>Execução</dt><dd><i class="todo">[Roteiro, gravação e aprovação]</i></dd>
             <dt>Resultado</dt><dd>54 milhões de visualizações com a mídia paga da marca, e 10 mil novos seguidores no vídeo principal.</dd>
@@ -220,7 +228,10 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
     </article>
 
     <article class="case">
-      <div class="frame" style="--p:55%"><b>AliExpress</b><small>achadinhos</small></div>
+      <div class="frame media">
+        <video src="img/aliexpress.mp4" poster="img/aliexpress.jpg" preload="none" playsinline aria-label="Vídeo da campanha AliExpress"></video>
+        <button class="play" type="button" aria-label="Assistir ao vídeo">▶</button>
+      </div>
       <div>
         <h3>AliExpress</h3>
         <p class="kind">Achadinhos com cara de recomendação</p>
@@ -241,19 +252,22 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
     </article>
 
     <article class="case">
-      <div class="frame" style="--p:40%"><b><span class="todo">[Marca]</span></b><small>campanha orgânica</small></div>
+      <div class="frame media">
+        <video src="img/oguru.mp4" poster="img/oguru.jpg" preload="none" playsinline aria-label="Vídeo da campanha GO by Oguru"></video>
+        <button class="play" type="button" aria-label="Assistir ao vídeo">▶</button>
+      </div>
       <div>
-        <h3><span class="todo">[SHEIN, Oguru ou Naturaltech]</span></h3>
-        <p class="kind">Campanha 100% orgânica</p>
-        <p class="stat"><strong><i class="todo">[número]</i></strong><span>visualizações orgânicas, sem mídia paga</span></p>
-        <p class="result"><i class="todo">[Resultado da campanha sem mídia paga]</i></p>
+        <h3>GO by Oguru</h3>
+        <p class="kind">Sushi no tubo, campanha 100% orgânica</p>
+        <p class="stat"><strong>128 mil</strong><span>visualizações orgânicas, sem mídia paga</span></p>
+        <p class="result">908 compartilhamentos e 726 salvamentos: gente mandando para os amigos e guardando para ir depois. Para um restaurante, é esse o sinal que importa.</p>
         <details>
           <summary>Ler o case completo</summary>
           <dl>
             <dt>Contexto</dt><dd><i class="todo">[a preencher]</i></dd>
             <dt>Estratégia</dt><dd><i class="todo">[a preencher]</i></dd>
             <dt>Execução</dt><dd><i class="todo">[a preencher]</i></dd>
-            <dt>Resultado</dt><dd><i class="todo">[a preencher]</i></dd>
+            <dt>Resultado</dt><dd>128,6 mil visualizações sem nenhum impulsionamento, 908 compartilhamentos e 726 salvamentos. 13,5% das visualizações vieram da busca do TikTok.</dd>
             <dt>Aprendizado</dt><dd><i class="todo">[a preencher]</i></dd>
           </dl>
           <a class="watch" href="https://www.tiktok.com/@sosozinha2.0" target="_blank" rel="noopener">Assistir no TikTok</a>
@@ -264,7 +278,7 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
 
   <section id="marcas">
     <h2>Marcas atendidas</h2>
-    <p class="brands"><em>Pink de Luxo</em>, Realme, SHEIN, AliExpress, Dola, L’Occitane, Red Bull, Melu, Dux Nutrition e OAS.</p>
+    <p class="brands"><em>Pink de Luxo</em>, Realme, SHEIN, AliExpress, Dola, Oguru, L’Occitane, Red Bull, Melu, Dux Nutrition e OAS.</p>
   </section>
 
   <section id="sobre">
@@ -290,5 +304,8 @@ footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);font-s
   </section>
 </main>
 <footer><div class="wrap">Sophia Scaramella, São Paulo</div></footer>
+<script>
+document.querySelectorAll('.frame .play').forEach(b=>b.addEventListener('click',()=>{const v=b.previousElementSibling;v.controls=true;v.play();b.remove()}));
+</script>
 </body>
 </html>
